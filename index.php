@@ -39,13 +39,23 @@ include 'inc/header.php';
         }
 
         if(empty($titleErr) && empty($loadLiftedErr) && empty($repsErr)){
-            $sql = "INSERT INTO feedback (title, loadLifted,reps) VALUES('$title','$loadLifted','$reps')";
+            $sql = "INSERT INTO Exercise (title, loadLifted,reps) VALUES('$title','$loadLifted','$reps')";
 
-            if(!mysqli_query($conn, $sql)){
+            if(mysqli_query($conn, $sql)){
+                $title = $loadLifted = $reps = ''; 
+                $titleErr = $loadLiftedErr=$repsErr='';
+            }else{
+              
                 echo "Error: ". mysqli_error($conn);
             }
         }
     }
+?>
+
+<?php
+$sql = 'SELECT * FROM Exercise';
+$result = mysqli_query($conn, $sql);
+$workouts = mysqli_fetch_all($result ,MYSQLI_ASSOC);
 ?>
 
 
@@ -64,12 +74,12 @@ include 'inc/header.php';
                 </div>
                 <div class="load-container">
                     <label for="load">Load in Kgs</label>
-                    <input type="number" name="loadLifted" id="load" class="input-workout <?php $loadLiftedErr?"input-error":null; ?>" value="<?php echo $loadLifted; ?>">
+                    <input type="number" name="loadLifted" id="load" class="input-workout <?php $loadLiftedErr?" input-error":null; ?>" value="<?php echo $loadLifted; ?>">
                     <p class="error-message"><?php echo $loadLiftedErr;?></p>
                 </div>
                 <div class="reps-container">
                     <label for="reps">Reps Taken</label>
-                    <input type="number" name="reps" id="reps"  class="input-workout <?php $repsErr?"input-error":null; ?>" value="<?php echo $reps; ?>">
+                    <input type="number" name="reps" id="reps"  class="input-workout <?php $repsErr?" input-error":null; ?>" value="<?php echo $reps; ?>">
                     <p class="error-message"><?php echo $repsErr;?></p>
                 </div>
                 <div class="submit-container">
@@ -80,19 +90,27 @@ include 'inc/header.php';
     <div class="workouts">
         <h2>Workouts</h2>
         <div class="workouts-container">
+            <?php
+            if(empty($workouts)):
+                ?>
+                <h4>You don't have any workouts</h4>
+            <?php endif; ?>
+
+            <?php 
+            foreach($workouts as $workout): ?>
             <div class="workout-card">
                 <div class="details-container">
-                    <h4>title</h4>
-                    <h5>Load in Kg</h5>
-                    <h5>Number of Reps</h5>
-                    <h6>Date</h6>
+                    <h4>title: <?php echo $workout['title'];?></h4>
+                    <h5>Load:  <?php echo $workout['loadLifted'];?></h5>
+                    <h5>Number of Reps:  <?php echo $workout['reps'];?></h5>
+                    <h6>On : <?php echo $workout['date'];?></h6>
                 </div>
                 <div class="icons-container">
                     <i class="bi bi-pencil"></i>
                     <i class="bi bi-trash3"></i>
                 </div>
             </div>
-            
+            <?php endforeach;?>
         </div>
     </div>
     </main>
