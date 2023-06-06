@@ -69,17 +69,17 @@ $workouts = mysqli_fetch_all($result ,MYSQLI_ASSOC);
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="add-workout">
                 <div class="exercise-container">
                     <label for="exercise">Exercise Title</label>
-                    <input type="text" class="input-workout <?php $titleErr?"input-error":null; ?>" name="title" value="<?php echo $title; ?>">
+                    <input type="text" class="input-workout <?php echo $titleErr?"input-error":null; ?>" name="title" value="<?php echo $title; ?>">
                     <p class="error-message"><?php echo $titleErr;?></p>
                 </div>
                 <div class="load-container">
                     <label for="load">Load in Kgs</label>
-                    <input type="number" name="loadLifted" id="load" class="input-workout <?php $loadLiftedErr?" input-error":null; ?>" value="<?php echo $loadLifted; ?>">
+                    <input type="number" name="loadLifted" id="load" class="input-workout <?php echo $loadLiftedErr?" input-error":null; ?>" value="<?php echo $loadLifted; ?>">
                     <p class="error-message"><?php echo $loadLiftedErr;?></p>
                 </div>
                 <div class="reps-container">
                     <label for="reps">Reps Taken</label>
-                    <input type="number" name="reps" id="reps"  class="input-workout <?php $repsErr?" input-error":null; ?>" value="<?php echo $reps; ?>">
+                    <input type="number" name="reps" id="reps"  class="input-workout <?php echo $repsErr?" input-error":null; ?>" value="<?php echo $reps; ?>">
                     <p class="error-message"><?php echo $repsErr;?></p>
                 </div>
                 <div class="submit-container">
@@ -106,7 +106,7 @@ $workouts = mysqli_fetch_all($result ,MYSQLI_ASSOC);
                     <h6>On : <?php echo $workout['date'];?></h6>
                 </div>
                 <div class="icons-container">
-                    <i class="bi bi-pencil"></i>
+                    <a href="update.php?id=<?php echo $workout['id']; ?>"><i class="bi bi-pencil"></i></a>
                     <i class="bi bi-trash3"></i>
                 </div>
             </div>
