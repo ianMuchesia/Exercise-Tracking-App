@@ -189,6 +189,13 @@ Add Workout
     border-radius: 5px;
 
 }
+.input-error{
+  border:1px solid red;
+}
+.error-message{
+  font-size: 0.75rem;
+  color:red;
+}
 .submit-container{
     justify-self: flex-start;
 }

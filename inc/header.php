@@ -10,5 +10,5 @@
 </head>
 <body>
     <header>
-        <h3>Tracking App</h3>
+        <h3>Exercise Tracking App</h3>
     </header>
