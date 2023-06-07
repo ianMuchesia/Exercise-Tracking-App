@@ -308,17 +308,22 @@ update
     text-align: center;
     margin: 1em;
     font-weight: 600;
+    
 }
 
 
 
 
-/*
-=============== 
-Log in
-===============
-*/
-.form-login{
+
+.login-page{
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    height: 100vh;
+}
+.form-login {
   background-color: #fff;
   display: block;
   padding: 1rem;
@@ -379,7 +384,7 @@ Log in
   padding-bottom: 0.75rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  background-color: #4F46E5;
+  background-color: var(--green-600);
   color: #ffffff;
   font-size: 0.875rem;
   line-height: 1.25rem;

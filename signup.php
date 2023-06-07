@@ -7,7 +7,11 @@ include 'inc/header.php';
 <div class="login-page">
 <form class="form-login">
     
-       <p class="form-title">Sign in to your account</p>
+       <p class="form-title">Sign up to open your account</p>
+       <div class="input-container">
+          <input placeholder="Enter name" type="text" name="name">
+          
+      </div>
         <div class="input-container">
           <input placeholder="Enter email" type="email">
           
@@ -17,13 +21,18 @@ include 'inc/header.php';
 
          
         </div>
+        <div class="input-container">
+          <input placeholder="Confirm password" type="password">
+
+         
+        </div>
          <button class="submit" type="submit">
-        Sign in
+        Sign Up
       </button>
 
       <p class="signup-link">
-        No account?
-        <a href="">Sign up</a>
+        Have an account?
+        <a href="/exercise_app/login.php">Sign in</a>
       </p>
    </form>
    </div>
