@@ -23,7 +23,7 @@ include 'inc/header.php';
 
       <p class="signup-link">
         No account?
-        <a href="">Sign up</a>
+        <a href="/exercise_app/signup.php">Sign up</a>
       </p>
    </form>
    </div>

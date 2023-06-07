@@ -344,7 +344,7 @@ update
   position: relative;
 }
 
-.input-container input, .form-login button {
+.input-container input, .form-login .submit {
   outline: none;
   border: 1px solid #e5e7eb;
   margin: 8px 0;
@@ -392,6 +392,7 @@ update
   width: 100%;
   border-radius: 0.5rem;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .signup-link {

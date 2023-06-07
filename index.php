@@ -119,7 +119,7 @@ if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id'])
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="add-workout">
             <div class="exercise-container">
                 <label for="exercise">Exercise Title</label>
-                <input type="text" class="input-workout <?php echo $titleErr ? "input-error" : null; ?>" name="title" value="<?php echo $title; ?>">
+                <input type="text" class="input-workout " name="title" value="<?php echo $title; ?>">
                 <p class="error-message"><?php echo $titleErr; ?></p>
             </div>
             <div class="load-container">
