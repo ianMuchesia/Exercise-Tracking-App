@@ -118,7 +118,7 @@ if (isset($_POST['submit'])) {
 
         <p class="signup-link">
             Have an account?
-            <a href="/exercise_app/login.php">Sign in</a>
+            <a href="/exercise_app/index.php">Sign in</a>
         </p>
     </form>
 </div>

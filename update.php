@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
             $titleErr = $loadLiftedErr = $repsErr = '';
             $success = true;
 
-            header('Location:index.php');
+            header('Location:home.php');
         }
     }
 }

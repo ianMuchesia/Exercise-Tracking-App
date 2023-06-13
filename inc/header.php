@@ -14,5 +14,5 @@
 <body>
     <header>
         <h3>Exercise Tracking App</h3>
-        <a href="../exercise_app/login.php"><h5>Login</h5></a>
+        <a href="../exercise_app/index.php"><h5>Login</h5></a>
     </header>
